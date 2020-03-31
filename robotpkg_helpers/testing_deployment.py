@@ -129,8 +129,10 @@ class RobotpkgTests:
             'ACCEPTABLE_LICENSES+=pal-license',
             'ROS_PACKAGE_PATH='+self.env["ROS_PACKAGE_PATH"],
             'PKG_CONFIG_DIRS='+self.env["PKG_CONFIG_PATH"],
-            'MAKE_JOBS=3'
         ]
+        if 'MAKE_FLAGS' in self.env.keys():
+            self.robotpkg_conf_lines.append('MAKE_JOBS='+self.env["MAKE_FLAGS"])
+
 
         env=os.environ.copy()
         if 'JRL_FTP_USER' in env.keys():
