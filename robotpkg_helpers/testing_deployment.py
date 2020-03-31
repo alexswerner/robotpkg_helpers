@@ -131,6 +131,7 @@ class RobotpkgTests:
             'PKG_CONFIG_DIRS='+self.env["PKG_CONFIG_PATH"],
         ]
         if 'MAKE_FLAGS' in self.env.keys():
+            print("MAKE_FLAGS="+self.env["MAKE_FLAGS"])
             self.robotpkg_conf_lines.append('MAKE_JOBS='+self.env["MAKE_FLAGS"])
 
 
