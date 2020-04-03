@@ -132,9 +132,9 @@ class RobotpkgTests:
         ]
         import os
         print(str(os.environ))
-        if 'MAKE_FLAGS' in os.environ.keys():
-            print("MAKE_FLAGS="+os.environ["MAKE_FLAGS"])
-            self.robotpkg_conf_lines.append('MAKE_JOBS='+os.environ["MAKE_FLAGS"])
+        if 'MAKE_JOBS' in os.environ.keys():
+            print("MAKE_JOBS="+os.environ["MAKE_JOBS"])
+            self.robotpkg_conf_lines.append('MAKE_JOBS='+os.environ["MAKE_JOBS"])
 
 
         env=os.environ.copy()
